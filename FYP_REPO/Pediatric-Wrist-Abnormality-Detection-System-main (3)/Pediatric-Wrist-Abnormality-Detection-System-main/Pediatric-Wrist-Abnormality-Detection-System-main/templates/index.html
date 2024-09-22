@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Dental disease Detection</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link
+      href="{{ url_for('static', filename='assets/img/favicon.png')}}"
+      rel="icon"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/img/apple-touch-icon.png')}}"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{{ url_for('static', filename='assets/vendor/fontawesome-free/css/all.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/animate.css/animate.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/aos/aos.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link
+      href="{{ url_for('static', filename='assets/css/style.css')}}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <a href="/" class="logo me-auto"
+          ><img
+            src="{{ url_for('static', filename='assets/img/logo.png')}}"
+            alt=""
+        /></a>
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="nav-link scrollto" href="/">Home</a></li>
+
+            <li>
+              <a class="nav-link scrollto" href="#Research-Paper">Research</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="/documentation"
+                >Documentation</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="/conversion_tool"
+                >Conversion Tool</a
+              >
+            </li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+
+        <a href="#appointment" class="appointment-btn scrollto"
+          ><span class="d-none d-md-inline">DIAGNOSE X-RAY</span></a
+        >
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+      <div
+        id="heroCarousel"
+        data-bs-interval="5000"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide 1 -->
+          <div
+            class="carousel-item active"
+            style="background-image: url({{ url_for('static', filename='assets/img/slide/slide-1.jpg') }})"
+          >
+            <div class="container">
+              <h2>
+                Welcome to
+                <span>Dental disease Detection</span>
+              </h2>
+              <p>Experience precise dental disease detection with our cutting-edge Single-Stage Model. 
+                Say farewell to misdiagnosis and access reliable, fast results today</p>
+              <a href="#about" class="btn-get-started scrollto">Read More</a>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div
+            class="carousel-item"
+            style="background-image: url({{ url_for('static', filename='assets/img/slide/slide-2.jpg') }})"
+          >
+            <div class="container">
+              <h2>Did You Know?</h2>
+              <p>
+                Delays in dental radiology imaging can extend patient hospital stays.
+                 A recent study revealed that these delays were an independent factor in longer stays. 
+                 Additionally, generating reports from dental MRI scans often exceeded three hours, 
+                 with radiologists accounting for 42% of the delay. These delays impose substantial burdens
+                 on patients and add unnecessary strain to healthcare systems and insurers.
+              </p>
+              <a href="#about" class="btn-get-started scrollto">Read More</a>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div
+            class="carousel-item"
+            style="background-image: url({{ url_for('static', filename='assets/img/slide/slide-3.jpg') }})"
+          >
+            <div class="container">
+              <h2>Fun Fact</h2>
+              <p>
+                
+Did you know that there is an impending shortage of radiologists in the field of 
+dental disease detection? The increasing demand for dental imaging studies is expected 
+to exacerbate this issue. On average, the demand for imaging studies grows by five percent annually,
+ while the availability of radiology
+ residency positions lags behind with a mere two percent growth rate.
+              </p>
+              <a href="#about" class="btn-get-started scrollto">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <a
+          class="carousel-control-prev"
+          href="#heroCarousel"
+          role="button"
+          data-bs-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon bi bi-chevron-left"
+            aria-hidden="true"
+          ></span>
+        </a>
+
+        <a
+          class="carousel-control-next"
+          href="#heroCarousel"
+          role="button"
+          data-bs-slide="next"
+        >
+          <span
+            class="carousel-control-next-icon bi bi-chevron-right"
+            aria-hidden="true"
+          ></span>
+        </a>
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+      <!-- ======= Featured Services Section ======= -->
+      <section id="featured-services" class="featured-services">
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            >
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon"><i class="fa-solid fa-robot"></i></div>
+                <h4 class="title">
+                  <a href="">Precision Dental Diagnosis</a>
+                </h4>
+                <p class="description">
+                  The system automatically detects dental diseases, requiring no specialized training
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            >
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon"><i class="fas fa-pills"></i></div>
+                <h4 class="title"><a href="">Single-stage Deep Learning</a></h4>
+                <p class="description">
+                  The system uses state-of-the-art single-stage deep neural
+                  network models, specifically YOLOv5, YOLOv6, YOLOv7, and
+                  YOLOv8, for fracture detection, vision transformer, which have shown promising
+                  results in medical settings.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            >
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class="fas fa-thermometer"></i></div>
+                <h4 class="title"><a href="">Pediatric X-ray Imaging</a></h4>
+                <p class="description">
+                  The system is designed to detect common dental diseases in dental radiographs, 
+                  aiding in the early diagnosis and treatment of conditions like dentigerous cysts, 
+                  pericoronitis, 
+                  supernumerary teeth, chronic periodontitis, osteomyelitis, and sinusitis.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
+            >
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon"><i class="fas fa-dna"></i></div>
+                <h4 class="title"><a href="">Improved Patient Care</a></h4>
+                <p class="description">
+                  The system quickly and accurately detects dental diseases 
+                  to enhance patient care and prevent long-term effects.
+                   Automation helps address shortages in dental specialists and limited access to specialized care."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Featured Services Section -->
+
+      <!-- ======= Cta Section ======= -->
+      <section id="Researsch-Paper" class="cta">
+        <div class="container" data-aos="zoom-in">
+          <div class="text-center">
+            <h3>Our Research Paper</h3>
+            <p class='align'>
+              In our comprehensive study of dental disease detection, we delved into
+               the efficacy of single-stage detection models for identifying a range of 
+               prevalent dental conditions. Our investigation was grounded in a dataset comprising 
+               a total of 1244 images, encompassing both non-Periodontitis (772 images) and Periodontitis 
+               (473 images) cases. The dataset was meticulously divided into training (70%), testing (20%), 
+               and validation (10%) sets, maintaining a balanced distribution 
+              of positive and negative cases in each subset.
+            </p>
+            <img
+            src="{{url_for('static',
+            filename='assets/img/research_paper_cover_page.png')}}"
+            alt="Research Paper cover image"
+            class="custom-img"
+          />
+          
+            <a class="cta-btn scrollto" href="#appointment"
+              >Learn more about our research</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- End Cta Section -->
+
+      <!-- ======= About Us Section ======= -->
+      <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>About Us</h2>
+            <p >
+              This research was conducted in collaboration with esteemed professors from Chosun University and the Department of Computer Science at COMSATS University.
+               It received additional support and funding through relevant channels.
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-right">
+              <img
+                src="{{ url_for('static', filename='assets/img/about.jpg')}}"
+                class="img-fluid"
+                alt=""
+                style="height: 610px;"
+
+              />
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+              <h3>COMSATS University Islamabad</h3>
+              <p class="fst-italic">
+                COMSATS University Islamabad, initially established in 1998 as a flagship project
+                of COMSATS, has risen from humble beginnings to become one of the foremost 
+                institutions in Pakistan, particularly excelling in the field of Information Technology (IT).
+                Over the years, it has expanded its presence to include seven campuses situated in
+                various cities across Pakistan, in addition to a virtual campus. The university offers degrees 
+                in diverse scientific and humanities disciplines, showcasing its commitment to providing a broad 
+                spectrum of educational opportunities. Moreover, COMSATS University Islamabad holds a prestigious
+                 position as a member of the COMSATS Network of International S&T Centres of Excellence, reflecting 
+                its global standing in the realm of science and technology.
+              </p>
+              <ul>
+                <li>
+                  <i class="bi bi-check-circle"></i> Research Excellence COMSATS University Islamabad 
+                  received the 2018 3G Research Excellence Award, recognized for its significant impact
+                   in research and development alongside 25 exceptional individuals and organizations 
+                  from 15 countries at the Global Good Governance Awards.
+                </li>
+                <li>
+                  <i class="bi bi-check-circle"></i> Global Recognition: COMSATS University Islamabad has
+                   consistently secured a place among the top 601-800 World Universities in Times Higher 
+                   Education (THE) World Universities Rankings for 2016-17 and 2017-18, 
+                  solidifying its status as a top-tier higher education institution.
+                </li>
+                <li>
+                  <i class="bi bi-check-circle"></i> Growth and Excellence: COMSATS University Islamabad,
+                   initially established as a flagship project of COMSATS in 1998, has evolved into one of 
+                   Pakistan's top institutions. It is particularly renowned for its excellence in Information 
+                   Technology (IT) 
+                  and offers degrees in various scientific and humanities disciplines.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About Us Section -->
+
+      <!-- ======= Counts Section ======= -->
+      <section id="counts" class="counts">
+        <div class="container" data-aos="fade-up">
+          <div class="row no-gutters">
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="fas fa-user-md"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="85"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+
+                <p>
+                  <strong>Visits:</strong> Number of times you as a physician or
+                  a user have visited this website.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="far fa-hospital"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="715000"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>
+                  <strong>Hospital Deaths:</strong> 715,000 people die each year
+                  in the hospital.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="fas fa-flask"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="500"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>
+                  <strong>Research:</strong> There were over 500 academic papers
+                  published on AI in medicine in 2023.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="fas fa-award"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="150"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>
+                  <strong>Industry:</strong> According to a report by Frost &
+                  Sullivan, AI is expected to save the healthcare industry $150
+                  billion annually by 2026.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Counts Section -->
+
+      <!-- ======= Services Section ======= -->
+      <section id="services" class="services services">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Services</h2>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-lg-4 col-md-6 icon-box"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="icon"><i class="fas fa-heartbeat"></i></div>
+              <h4 class="title"><a href="">Disease Detection</a></h4>
+              <p class="description">
+                The website can offer a service to detect diseases in
+                Teeth X-rays. The X-rays can be uploaded, and the
+                website can perform the detection using machine learning
+                algorithms, trained on large datasets of X-rays.
+              </p>
+            </div>
+            <div
+              class="col-lg-4 col-md-6 icon-box"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="icon"><i class="fas fa-pills"></i></div>
+              <h4 class="title"><a href="">User Friendly</a></h4>
+              <p class="description">
+                The website offers user-friendly interface and functionalities.
+              </p>
+            </div>
+            <div
+              class="col-lg-4 col-md-6 icon-box"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="icon"><i class="fas fa-hospital-user"></i></div>
+              <h4 class="title"><a href="">Educational Resources</a></h4>
+              <p class="description">
+                The website can offer educational resources to help doctors and
+                caregivers understand detect, including
+                information on diagnosis, treatment, and prevention.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Services Section -->
+
+      
+      <!-- ======= Appointment Section ======= -->
+      <section id="appointment" class="appointment section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>DIAGNOSE X-RAY IMAGE</h2>
+            <p>
+              Users can easily upload their X-ray images and receive clear
+              results highlighting any disease detection. The website
+              implements secure processes to protect the confidentiality of
+              medical images and personal information.
+            </p>
+          </div>
+
+          <form
+            action="/predict"
+            method="post"
+            enctype="multipart/form-data"
+            class="php-email-form"
+            id="form-for-prediction"
+          >
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <input
+                  type="text"
+                  name="Name"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="Age"
+                  id="age"
+                  placeholder="Your Age"
+                  required
+                />
+              </div>
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <select name="Gender" id="gender" class="form-select">
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+            </div>
+            
+
+            <div class="col-md-12 form-group outer-div-image">
+              <div>
+                <input
+                  class="btn"
+                  name="input-image"
+                  type="file"
+                  id="fileInput"
+                  accept=".png, .jpg, .jpeg"
+                  required
+                />
+                <br />
+                <div id="fileInputContainer">
+                  <h5 class="image-text">Choose an image</h5>
+                </div>
+              </div>
+
+              <div id="preview"></div>
+            </div>
+            <div class="loaderOfImage"></div>
+
+            <div class="text-center">
+              <button type="submit">Make a Prediction</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <!-- End Appointment Section -->
+
+      <!-- ======= Departments Section ======= -->
+      <section id="departments" class="departments">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Departments</h2>
+            <p>
+              AI has shown remarkable progress in the healthcare sector, with a 
+              significant impact on the field of dental disease detection. Utilizing advanced 
+              deep learning algorithms, AI plays a vital role in aiding dental professionals by 
+              enhancing the speed and precision of identifying abnormalities
+               and diseases in dental radiographs, leading to more rapid and accurate diagnoses.
+            </p>
+          </div>
+
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <ul class="nav nav-tabs flex-column">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active show"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tab-1"
+                  >
+                    <h4>Radiology</h4>
+                    <p>
+                      Radiology is a medical specialty that uses imaging
+                      techniques to diagnose and treat various diseases and
+                      conditions.
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item mt-2">
+                  <a
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tab-2"
+                  >
+                    <h4>Dentist</h4>
+                    <p>
+                      focuses on the prevention, diagnosis, and treatment of disorders and 
+                      conditions associated with the oral and dental system. It encompasses the 
+                      health of teeth, gums, jawbones, and related structures, 
+                      emphasizing the importance of maintaining oral health for overall well-being
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item mt-2">
+                  <a
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tab-3"
+                  >
+                    <h4>Pathology</h4>
+                    <p>
+                      pathologists examine tissue samples from bone biopsies to
+                      identify abnormalities or diagnose bone-related diseases.
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item mt-2">
+                  <a
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tab-4"
+                  >
+                    <h4>Pediatrics</h4>
+                    <p>
+                      Pediatrics is the medical specialty that focuses on the
+                      health and wellbeing of infants, children, and
+                      adolescents.
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-8">
+              <div class="tab-content">
+                <div class="tab-pane active show" id="tab-1">
+                  <h3>Radiology</h3>
+                  <p class="fst-italic">
+                    Radiology is a medical specialty that focuses on the use of
+                    medical imaging techniques to diagnose and treat various
+                    diseases and conditions. Radiologists use a variety of
+                    imaging techniques, such as X-rays, computed tomography
+                    (CT), magnetic resonance imaging (MRI), and ultrasound, to
+                    visualize the internal structures of the body, including the
+                    bones.
+                  </p>
+                  <img
+                    src="{{ url_for('static', filename='assets/img/departments-1.jpg')}}"
+                    alt=""
+                    class="img-fluid"
+                  />
+                  <p>
+                    Radiology plays an important role in the diagnosis and
+                    management of bone abnormalities, fractures, tumors, and
+                    other conditions affecting the skeletal system. For example,
+                    X-rays are commonly used to detect fractures, while CT and
+                    MRI scans are used to diagnose more complex bone injuries,
+                    such as those involving multiple fractures or soft tissue
+                    damage. Radiologists also use imaging techniques to diagnose
+                    and monitor bone-related diseases, such as osteoporosis and
+                    bone cancer. In cases where a bone biopsy is necessary,
+                    radiologists may use imaging techniques to guide the biopsy
+                    needle to the precise location of the abnormality.
+                  </p>
+                </div>
+                <div class="tab-pane" id="tab-2">
+                  <h3>Orthopedics</h3>
+                  <p class="fst-italic">
+                    Orthopedics, also known as orthopedic surgery, is a branch
+                    of medicine that deals with the diagnosis and treatment of
+                    musculoskeletal disorders. The musculoskeletal system
+                    includes bones, joints, ligaments, tendons, muscles, and
+                    nerves, and disorders affecting any of these structures fall
+                    within the purview of orthopedics.
+                  </p>
+                  <img
+                    src="{{ url_for('static', filename='assets/img/departments-2.jpg')}}"
+                    alt=""
+                    class="img-fluid"
+                  />
+                  <p>
+                    Orthopedic surgeons use a wide range of diagnostic and
+                    treatment modalities to address various musculoskeletal
+                    conditions, from minor injuries to complex fractures and
+                    joint replacements. Some of the common musculoskeletal
+                    disorders that orthopedic surgeons treat include arthritis,
+                    osteoporosis, back pain, sports injuries, and congenital
+                    disorders such as scoliosis. Orthopedic treatment can range
+                    from non-surgical interventions, such as physical therapy
+                    and medication, to surgical procedures such as joint
+                    replacement, spinal fusion, and bone grafting. Orthopedic
+                    surgeons work in a variety of settings, including hospitals,
+                    clinics, and private practice, and collaborate with other
+                    healthcare professionals to ensure comprehensive care for
+                    their patients.
+                  </p>
+                </div>
+                <div class="tab-pane" id="tab-3">
+                  <h3>Pathology</h3>
+                  <p class="fst-italic">
+                    Pathology is a medical specialty that involves the study of
+                    disease, its causes, and its effects on the body's tissues
+                    and organs. Pathologists are physicians who specialize in
+                    the diagnosis and management of disease by examining
+                    tissues, cells, and bodily fluids.
+                  </p>
+                  <img
+                    src="{{ url_for('static', filename='assets/img/departments-3.jpg')}}"
+                    alt=""
+                    class="img-fluid"
+                  />
+                  <p>
+                    Pathology encompasses a broad range of subspecialties,
+                    including anatomical pathology, clinical pathology, forensic
+                    pathology, and molecular pathology, among others. Anatomical
+                    pathologists specialize in the examination of tissues,
+                    organs, and bodily fluids obtained from biopsies, surgical
+                    resections, and autopsies. Clinical pathologists, on the
+                    other hand, focus on the analysis of bodily fluids, such as
+                    blood and urine, to diagnose and monitor various conditions.
+                  </p>
+                </div>
+                <div class="tab-pane" id="tab-4">
+                  <h3>Pediatrics</h3>
+                  <p class="fst-italic">
+                    Pediatrics is a medical specialty that focuses on the care
+                    of infants, children, and adolescents. Pediatricians are
+                    physicians who specialize in the physical, emotional, and
+                    social health of children from birth through adolescence.
+                  </p>
+                  <img
+                    src="{{ url_for('static', filename='assets/img/departments-4.jpg')}}"
+                    alt=""
+                    class="img-fluid"
+                  />
+                  <p>
+                    Pediatricians provide a wide range of healthcare services,
+                    including preventive care, acute care for illnesses and
+                    injuries, and management of chronic health conditions. They
+                    also monitor and promote children's growth and development,
+                    and provide education and support to parents and caregivers.
+                    Pediatricians work in a variety of settings, including
+                    hospitals, clinics, and private practice. They collaborate
+                    with other healthcare professionals, such as nurses, social
+                    workers, and psychologists, to ensure comprehensive care for
+                    their patients.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Departments Section -->
+
+      <!-- ======= Doctors Section ======= -->
+      <section id="doctors" class="doctors section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Authors</h2>
+          </div>
+      
+          <div class="row">
+            
+            
+            <!-- Author 1: Abdullah Shafique -->
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/authors/ABD.jfif')}}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="social">
+                    <a href=""
+                      ><i class="bi bi-twitter"></i
+                    ></a>
+                    <a
+                      href=""
+                      ><i class="bi bi-facebook"></i
+                    ></a>
+                    <a href=""
+                      ><i class="bi bi-instagram"></i
+                    ></a>
+                    <a href=""
+                      ><i class="bi bi-linkedin"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Abdullah Shafique</h4>
+                  <span>Data Scientist</span>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Author 2: Umair Ali -->
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="200">
+                <div class="member-img">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/authors/Umair.jfif')}}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="social">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a
+                      href=""
+                      ><i class="bi bi-facebook"></i
+                    ></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href=""
+                      ><i class="bi bi-linkedin"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Umair Ali</h4>
+                  <span>Deep Learning Engineer</span>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Author 3: Amna Zahid -->
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="300">
+                <div class="member-img">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/authors/Amna.jpeg')}}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="social">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Amna Zahid</h4>
+                  <span>Machine Learning Engineer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+      </div>
+      </section>
+      
+      <!-- End Doctors Section -->
+
+      <!-- ======= Gallery Section ======= -->
+      <section id="gallery" class="gallery">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Gallery</h2>
+            <p>
+              Dental imaging, too, has harnessed the capabilities of AI, resulting in 
+              enhanced image quality and minimized radiation exposure for pediatric 
+              patients, ensuring safer and more efficient diagnostic procedures.
+            </p>
+          </div>
+
+          <div class="gallery-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide">
+                <a
+                  class="gallery-lightbox"
+                  href="{{ url_for('static', filename='assets/img/gallery/gallery-1.jpg')}}"
+                  ><img
+                    src="{{ url_for('static', filename='assets/img/gallery/gallery-1.jpg')}}"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  class="gallery-lightbox"
+                  href="{{ url_for('static', filename='assets/img/gallery/gallery-2.jpg')}}"
+                  ><img
+                    src="{{ url_for('static', filename='assets/img/gallery/gallery-2.jpg')}}"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  class="gallery-lightbox"
+                  href="{{ url_for('static', filename='assets/img/gallery/gallery-3.jpg')}}"
+                  ><img
+                    src="{{ url_for('static', filename='assets/img/gallery/gallery-3.jpg')}}"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  class="gallery-lightbox"
+                  href="{{ url_for('static', filename='assets/img/gallery/gallery-4.jpg')}}"
+                  ><img
+                    src="{{ url_for('static', filename='assets/img/gallery/gallery-4.jpg')}}"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  class="gallery-lightbox"
+                  href="{{ url_for('static', filename='assets/img/gallery/gallery-5.jpg')}}"
+                  ><img
+                    src="{{ url_for('static', filename='assets/img/gallery/gallery-5.jpg')}}"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  class="gallery-lightbox"
+                  href="{{ url_for('static', filename='assets/img/gallery/gallery-6.jpg')}}"
+                  ><img
+                    src="{{ url_for('static', filename='assets/img/gallery/gallery-6.jpg')}}"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  class="gallery-lightbox"
+                  href="{{ url_for('static', filename='assets/img/gallery/gallery-7.jpg')}}"
+                  ><img
+                    src="{{ url_for('static', filename='assets/img/gallery/gallery-7.jpg')}}"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a
+                  class="gallery-lightbox"
+                  href="{{ url_for('static', filename='assets/img/gallery/gallery-8.jpg')}}"
+                  ><img
+                    src="{{ url_for('static', filename='assets/img/gallery/gallery-8.jpg')}}"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <!-- End Gallery Section -->
+
+      <!-- ======= Frequently Asked Questioins Section ======= -->
+      <section id="faq" class="faq section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Frequently Asked Questioins</h2>
+            <p>
+              This description delves into the methodology employed for the development of a 
+              dental disease detection system, highlighting the utilization of cutting-edge machine
+               learning and deep learning techniques. Furthermore, it underscores the substantial efforts 
+               invested in refining the system's accuracy, 
+              achieved through meticulous preprocessing and image augmentation strategies.
+            </p>
+          </div>
+
+          <ul class="faq-list">
+            <li>
+              <div
+                data-bs-toggle="collapse"
+                class="collapsed question"
+                href="#faq1"
+              >
+                How was the teeth disease detection system developed in this
+                project?
+                <i class="bi bi-chevron-down icon-show"></i
+                ><i class="bi bi-chevron-up icon-close"></i>
+              </div>
+              <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  The teeth disease detection system was developed using machine
+                  learning and deep learning techniques. A total of 23 detection
+                  procedures were performed, including preprocessing and image
+                  augmentation to improve accuracy. Through experimentation with
+                  different architectures, the optimal approach was identified.
+                  State-of-the-art YOLO models and their variants were chosen
+                  for the detection tasks.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                data-bs-toggle="collapse"
+                href="#faq2"
+                class="collapsed question"
+              >
+                What specific models were used in the project for teeth diseases
+                detection?<i class="bi bi-chevron-down icon-show"></i
+                ><i class="bi bi-chevron-up icon-close"></i>
+              </div>
+              <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  The project utilized state-of-the-art single-stage neural
+                  network models, including YOLOv5, YOLOv6, YOLOv7, and YOLOv8. , Vision ransformer 
+                  After architectural enhancements, YOLOv8x emerged as the
+                  best-performing model, particularly for detecting the diseases.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                data-bs-toggle="collapse"
+                href="#faq3"
+                class="collapsed question"
+              >
+                How can medical professionals access the teeth detection
+                system? <i class="bi bi-chevron-down icon-show"></i
+                ><i class="bi bi-chevron-up icon-close"></i>
+              </div>
+              <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  The teeth diseases detection system was deployed using Flask,
+                  allowing medical professionals to access it through a
+                  web-based interface. Additionally, an Android application was
+                  developed to ensure broader accessibility for healthcare
+                  professionals.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                data-bs-toggle="collapse"
+                href="#faq4"
+                class="collapsed question"
+              >
+                What was the main focus of the methodology in this project?
+                <i class="bi bi-chevron-down icon-show"></i
+                ><i class="bi bi-chevron-up icon-close"></i>
+              </div>
+              <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  The methodology aimed to develop a reliable and efficient
+                  teeth diseases detection system. It involved leveraging machine
+                  learning and deep learning techniques, performing 23 detection
+                  procedures, and using preprocessing and image augmentation to
+                  enhance accuracy. The selected state-of-the-art YOLO model , Vision transformer ad 
+                  its variants were deployed to achieve precise and effective
+                  teeth diseases detection.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                data-bs-toggle="collapse"
+                href="#faq5"
+                class="collapsed question"
+              >
+                How does the teeth diseases detection system contribute to
+                patient care? <i class="bi bi-chevron-down icon-show"></i
+                ><i class="bi bi-chevron-up icon-close"></i>
+              </div>
+              <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  The teeth diseases detection system automates the detection of
+                  teeth diseases, particularly fractures in young
+                  individuals. By utilizing advanced neural network models, it
+                  assists medical professionals in accurate and timely
+                  diagnosis, thereby reducing the risks associated with limited
+                  training and improving patient care.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- End Frequently Asked Questioins Section -->
+
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-title">
+            <h2>Contact</h2>
+            <p>You can easily contact with us through below information</p>
+          </div>
+        </div>
+
+        <div>
+          
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2869.938258010547!2d73.14624712350903!3d30.64179140262546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922b6e4dde0c501%3A0xc37ea3d85326203!2sCOMSATS%20University%20Islamabad%20-%20Sahiwal%20Campus!5e0!3m2!1sen!2s!4v1696788605841!5m2!1sen!2s" width="2000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          
+        </div>
+
+        <div class="container">
+          <div class="row mt-5">
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="info-box">
+                    <i class="bx bx-map"></i>
+                    <h3>Our Address</h3>
+                    <p>Comsats University Rd, off GT road،, Sahiwal, Sahiwal District, Punjab 57000 Pakistan</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-box mt-4">
+                    <i class="bx bx-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>
+                      AamnaZahid151@gmail.com <br />umairchanna57@gmail.com<br />shafiq00413@icloud.com<br />
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-box mt-4">
+                    <i class="bx bx-phone-call"></i>
+                    <h3>Call Us</h3>
+                    <p>+92 309 4094776 <br />+92 312 6153837<br />+92 323 6071615 <br /> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <form
+                action="https://formspree.io/f/mnqyrbyn"
+                method="POST"
+                role="form"
+                class="php-email-form"
+              >
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      required=""
+                    />
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                    required=""
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="7"
+                    placeholder="Message"
+                    required=""
+                  ></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">
+                    Your message has been sent. Thank you!
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Contact Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="bg-dark text-light text-center py-3">
+      <p>Copyright &copy; 2023 COMSATS University</p>
+    </footer>
+    <!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/upload-image.js')}}"></script>
+  </body>
+
+  <script>
+    let visitCount = parseInt(localStorage.getItem("visitCount")) || 0;
+
+    visitCount++;
+    localStorage.setItem("visitCount", visitCount);
+
+    document
+      .querySelector(".purecounter")
+      .setAttribute("data-purecounter-end", visitCount);
+  </script>
+</html>

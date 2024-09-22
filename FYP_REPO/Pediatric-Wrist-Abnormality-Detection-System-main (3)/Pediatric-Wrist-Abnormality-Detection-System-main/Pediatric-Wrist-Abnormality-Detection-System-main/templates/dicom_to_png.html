@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Pediatric Wrist Anomaly Classification & Detection</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link
+      href="{{ url_for('static', filename='assets/img/favicon.png')}}"
+      rel="icon"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/img/apple-touch-icon.png')}}"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{{ url_for('static', filename='assets/vendor/fontawesome-free/css/all.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/animate.css/animate.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/aos/aos.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link
+      href="{{ url_for('static', filename='assets/css/style.css')}}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <a href="/" class="logo me-auto"
+          ><img
+            src="{{ url_for('static', filename='assets/img/logo.png')}}"
+            alt=""
+        /></a>
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="nav-link scrollto" href="/">Home</a></li>
+
+            <li>
+              <a class="nav-link scrollto" href="/#Research-Paper">Research</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="/documentation"
+                >Documentation</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="/conversion_tool"
+                >Conversion Tool</a
+              >
+            </li>
+            <li><a class="nav-link scrollto" href="/#about">About</a></li>
+            <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+
+        <a href="/#appointment" class="appointment-btn scrollto"
+          ><span class="d-none d-md-inline">DIAGNOSE X-RAY</span></a
+        >
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <section
+        id="appointment"
+        class="appointment section-bg"
+        style="margin-top: 5em"
+      >
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>DICOM to PNG</h2>
+            <p>
+              Convert your medical images from the Digital Imaging and
+              Communications in Medicine (DICOM) format to the widely supported
+              Portable Network Graphics (PNG) format using our online DICOM to
+              PNG conversion tool. Our tool allows for easy viewing, sharing,
+              and manipulation of medical images across various software
+              applications and platforms.
+            </p>
+          </div>
+
+          <form
+            action="/start_converting"
+            method="post"
+            enctype="multipart/form-data"
+            class="php-email-form"
+            id="form-for-prediction"
+          >
+            <div class="col-md-4 offset-5 form-group">
+              <input
+                class="btn"
+                name="input-image"
+                type="file"
+                id="image-input"
+                accept=".dicom"
+                required
+              />
+              <p class="note">Note: only .dicom acceptable</p>
+            </div>
+            <br />
+            <div class="text-center">
+              <button type="submit">Convert</button>
+            </div>
+          </form>
+          <div class="preview d-flex justify-content-center">
+            <a
+              class="d-flex justify-content-center"
+              download="converted-image.png"
+              href="{{file_path}}"
+              title="ImageName"
+            >
+              <img class="img-thumbnail mt-5" src="{{file_path}}" width="30%" />
+            </a>
+          </div>
+          <p class="d-flex justify-content-center">
+            <i>Click image to download</i>
+          </p>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="bg-dark text-light text-center py-3">
+      <p>Copyright &copy; 2023 Sukkur IBA</p>
+    </footer>
+    <!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/conversion.js')}}"></script>
+  </body>
+</html>

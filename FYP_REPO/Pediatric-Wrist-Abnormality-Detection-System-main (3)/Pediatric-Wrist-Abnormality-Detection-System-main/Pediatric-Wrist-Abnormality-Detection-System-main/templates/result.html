@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Result - Pediatric Wrist Anomaly Classification & Detection</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/img/favicon.png')}}"
+      rel="icon"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/img/apple-touch-icon.png')}}"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{{ url_for('static', filename='assets/vendor/fontawesome-free/css/all.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/animate.css/animate.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/aos/aos.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link
+      href="{{ url_for('static', filename='assets/css/style.css')}}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <a href="/" class="logo me-auto"
+          ><img
+            src="{{ url_for('static', filename='assets/img/logo.png')}}"
+            alt=""
+        /></a>
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="nav-link scrollto" href="/">Home</a></li>
+
+            <li>
+              <a class="nav-link scrollto" href="/#Research-Paper">Research</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="/documentation"
+                >Documentation</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="/conversion_tool"
+                >Conversion Tool</a
+              >
+            </li>
+            <li><a class="nav-link scrollto" href="/#about">About</a></li>
+            <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+
+        <a href="/#appointment" class="appointment-btn scrollto"
+          ><span class="d-none d-md-inline">DIAGNOSE X-RAY</span></a
+        >
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Main -->
+    <main>
+      <!-- Result Section -->
+      <section
+        class="w-75 mx-auto rounded imageshower-predict"
+        id="printable-section"
+      >
+        <div class="image-magnifier">
+          <div id="lens"></div>
+          <label class="switch">
+            <input id="image-type" type="checkbox" checked />
+            <span class="slider round"></span>
+          </label>
+          <div id="slideshow-items-container">
+            <img
+              class="slideshow-items active predicted-image"
+              src="{{ url_for('static', filename='runs/detect/predict/input-image.png') }}?{{ timestamp }}"
+              alt="error - image is not loading"
+            />
+          </div>
+          <div id="result"></div>
+        </div>
+        <div class="table-section">
+          <h3 class="report-heading">
+            Diagnosis Report
+
+            <span><i class="fa fa-print" id="print-button"></i> </span>
+          </h3>
+          <br />
+          <table class="patient-info">
+            <tr>
+              <td class="bold">Patient Name:</td>
+              <td class="dragfromleft-1">{{ patient_name }}</td>
+
+              <td class="bold dragfromleft-2">Age:</td>
+              <td class="dragfromleft-1">{{ age }}</td>
+            </tr>
+            <tr>
+              <td class="bold">Gender:</td>
+              <td class="dragfromleft-1">{{ gender }}</td>
+
+              <td class="bold dragfromleft-2">Wrist Side:</td>
+              <td class="dragfromleft-1">{{ side }}</td>
+            </tr>
+            <tr>
+              <td class="bold">Projection:</td>
+              <td class="dragfromleft-1">{{ projection }}</td>
+
+              <td class="bold dragfromleft-2">Date of Scan:</td>
+              <td class="dragfromleft-1">{{ date_of_scan }}</td>
+            </tr>
+          </table>
+
+          <hr />
+          {% if annotations %}
+          <h5 class="report-heading">Abnormalities Detected</h5>
+
+          <table class="anomaly-table">
+            <tr class="tr">
+              <th class="th" style="width: 8em">Name of Class</th>
+              <th class="th" style="width: 12em">Number of Anomalies</th>
+              <th class="th">
+                <span
+                  id="tooltip"
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20em;
+                  "
+                >
+                  Location(s)
+                  <i class="fa fa-info-circle" style="margin-left: 5px"></i>
+                  <span class="tooltiptext">(x_min, y_min, width, height)</span>
+                </span>
+              </th>
+            </tr>
+            {% for class_name in annotations.keys() %} {% if
+            annotations[class_name] %} {% set num_annotations =
+            annotations[class_name]|length %}
+            <tr class="tr">
+              <td class="td">{{ class_name }}</td>
+              <td class="td">{{ num_annotations }}</td>
+              <td class="td">{{ annotations[class_name] }}</td>
+            </tr>
+            {% endif %} {% endfor %}
+          </table>
+          {% else %}
+          <h5 style="text-align: center">
+            <span class="normal">Normal exam</span> - no evidence of any
+            <span class="abnormalities">wrist abnormalities</span>.
+          </h5>
+          {% endif %}
+          <p class="disclaimer">
+            The medical scan was processed using an artificial intelligence
+            algorithm that analyzed the image for abnormalities. While the
+            algorithm is highly accurate, the results should be reviewed and
+            validated by a trained medical professional before being used for
+            diagnosis or treatment decisions. Please consult with a qualified
+            medical professional for further evaluation and treatment
+            recommendations.
+          </p>
+        </div>
+      </section>
+      <!-- End Result -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="bg-dark text-light text-center py-3">
+      <p>Copyright &copy; 2023 Sukkur IBA</p>
+    </footer>
+    <!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+    <!-- JQuery JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/result.js')}}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("image-type");
+        const myImg = document.getElementsByClassName("predicted-image")[0];
+        const defaultImageUrl =
+          "{{url_for('static', filename='runs/detect/predict/input-image.png')}}?{{ timestamp }}";
+        const originalImageUrl =
+          "{{url_for('static', filename='input-image.png')}}?{{ timestamp }}";
+
+        toggleBtn.addEventListener("change", function () {
+          if (toggleBtn.checked) {
+            myImg.src = defaultImageUrl;
+          } else {
+            myImg.src = originalImageUrl;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
